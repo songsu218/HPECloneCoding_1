@@ -2,16 +2,143 @@
 @import url(./my_reset.css);
 @font-face {
   font-family: "S-CoreDream-3Light";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
-/* 
-font-family: "Font Awesome 6 Free";
-font-weight: 900;
-Solid → 900
-Regular, Brands → 400
-Light → 300
- */
+body {
+  font-family: "S-CoreDream-3Light";
+  font-weight: 900;
+  line-height: 1;
+}
+
+.wrap {
+  border: 1px solid red;
+  /* overflow: hidden; */
+}
+
+.wrap > * {
+  border: 1px solid lightblue;
+}
+
+.wrap > * > * {
+  border: 1px solid lightgreen;
+}
+
+.wrap > * > * > * {
+  border: 1px solid lightgrey;
+}
+
+.wrap > * > * > * > * {
+  border: 1px solid lightsalmon;
+}
+
+.mw {
+  max-width: 1440px;
+  width: calc(100% - 1rem);
+  margin: auto;
+}
+
+.hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.hd .logo {
+  padding: 1rem 0;
+  width: 124px;
+}
+
+.hd nav::before {
+  background-color: aliceblue;
+  content: "nav bord";
+  position: absolute;
+  top: 100%;
+  left: -500%;
+  width: 1000%;
+  height: 0;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.hd nav:hover::before {
+  height: 200px;
+  opacity: 1;
+}
+
+.hd .gnb {
+  display: flex;
+}
+
+.hd .gnb a {
+  display: block;
+  white-space: nowrap;
+}
+
+.hd .gnb > li {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.hd .gnb > li:hover > a {
+  color: black;
+}
+
+.hd .gnb > li > a {
+  font-family: "GmarketSansBold", sans-serif;
+  padding: 1rem 3.125rem;
+  font-size: 21px;
+  font-weight: 600;
+  color: #134aa9;
+  font-style: normal;
+}
+
+.hd .sub {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  text-align: center;
+  transition: opacity 0.5s;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.hd .sub a {
+  display: block;
+  margin-top: 25px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  text-align: left;
+  color: black;
+  font-size: 18px;
+}
+
+.hd .gnb:hover .sub {
+  opacity: 1;
+  height: 270px;
+}
+
+.hd .sub li {
+  border: 3px sandybrown;
+}
+
+/* .hd .sub li::before {
+  position: absolute;
+  content: "here";
+  border: 1px black;
+} */
+
+.hd .sub li:hover a {
+  color: #134aa9;
+}
+
+.ham {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: none;
+}
