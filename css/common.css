@@ -101,39 +101,73 @@ body {
   width: 100%;
   top: 100%;
   text-align: center;
-  transition: opacity 0.5s;
-  opacity: 0;
+  visibility: hidden;
   height: 0;
   overflow: hidden;
 }
 
+.hd .sub li {
+  position: relative;
+}
+
 .hd .sub a {
+  /* position: absolute; */
+  padding-top: 25px;
   display: block;
-  margin-top: 25px;
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
   text-align: left;
   color: black;
   font-size: 18px;
+  height: 100%;
+  width: 100%;
 }
 
 .hd .gnb:hover .sub {
-  opacity: 1;
+  /* opacity: 1; */
+  visibility: visible;
   height: 270px;
 }
 
 .hd .sub li {
-  border: 3px sandybrown;
+  position: relative;
 }
-
-/* .hd .sub li::before {
-  position: absolute;
-  content: "here";
-  border: 1px black;
-} */
 
 .hd .sub li:hover a {
   color: #134aa9;
+}
+
+.hd .sub > li a {
+  vertical-align: middle;
+}
+
+.hd .sub > li a::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-left: 0.1rem;
+  background-color: #134aa9;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.hd .sub > li a:hover::after {
+  opacity: 1;
+  margin-left: 0.3rem;
+}
+
+.hd .func {
+  display: flex;
+}
+
+.func a {
+  padding: 0.5rem 1rem;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 14px;
+  color: #134aa9;
+  white-space: nowrap;
 }
 
 .ham {
@@ -141,4 +175,50 @@ body {
   border: none;
   outline: none;
   display: none;
+  font-size: 1.5rem;
+}
+
+/* 메인 섹션 */
+.mainVisual {
+  position: relative;
+  max-width: 1440px;
+  margin: auto;
+  width: calc(100% - 1rem);
+  color: #134aa9;
+  font-family: "GmarketSansMedium", sans-serif;
+}
+
+.main img {
+  top: 0;
+  /* position: absolute; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mainVisual h2 {
+  font-size: 59px;
+}
+
+.mainVisual p {
+  font-size: 30px;
+}
+
+.slide-inner {
+  position: relative;
+}
+
+.inner {
+  position: absolute;
+}
+
+@media (max-width: 1280px) {
+  .hd nav,
+  .hd .func {
+    display: none;
+  }
+
+  .ham {
+    display: block;
+  }
 }
